@@ -6,7 +6,7 @@ dotenv.config({path:'./config/config.env'})
 
 port = process.env.PORT || 5000
 
-connectDB
+connectDB();
 
 app.listen(port,()=>{
     console.log(`Connected to port ${port}`);

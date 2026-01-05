@@ -2,7 +2,6 @@ const mongoose = require("mongoose");
 
 
 const userSchema = new mongoose.Schema({
-
     // Uname
     uName :{
         type:String,
@@ -14,4 +13,6 @@ const userSchema = new mongoose.Schema({
         required:[]
     }
 }
-)
+);
+
+module.exports = userSchema
