@@ -28,8 +28,21 @@ exports.createNewProduct = async (req, res, next) => {
   }
 };
 
-exports.getAllProducts = (req, res, next) => {
-  res.status(200).json({
-    message: "Route working fine",
-  });
+
+
+exports.getAllProducts = async (req, res, next) => {
+  try{
+    const allProducts = await Product.find({});
+  
+  
+    res.status(200).json({
+      message: "Route working fine",
+      allProducts
+    });
+  }catch(error){
+    res.status(400).json({
+      success:false,
+      error:error.message,
+    })
+  }
 };
